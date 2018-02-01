@@ -1,0 +1,452 @@
+body, html {
+    height: 100%; /*I put 100% height for html and body to make sure that the background image is covering the whole screen*/
+    margin: 0;
+}
+
+#content {
+  width: 1366px;
+  margin: 0 auto;
+}
+
+#site-wrapper {
+  background-image: url("../img/backgroundpaper.png");
+  /* Centering and scaling of the image:*/
+  background-position: center;
+  background-size: cover;
+  min-width: 1366px;
+  min-height: 768px;
+  padding: 30px;
+}
+
+#logo {
+  width: 250px;
+  height: auto;
+  margin: 5px 80px 80px 80px;
+}
+
+#headertext {
+  width: 771px;
+  height: auto;
+  margin: 40px 0;
+  position: absolute; /*Makes the header stay in place when resizing window/tab*/
+}
+
+#sidemenu {
+  position: relative;
+  width: 206px;
+  height: 187px;
+  top: 0px;
+  margin: 0px 105px;
+}
+
+#portfolio_button {
+  position: absolute;
+  background-image: url("../img/portfolio_button.png");
+  height: 46px;
+  width: 247px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#portfolio_button:hover {
+  position: absolute;
+  background: url("../img/portfolio_hover_animation.png") 0 0/*X & Y*/ no-repeat;
+  height:46px;
+  width: 253.5px; /*half the width of button image start/ending point so you only see one keyframe at a time(the spritesheet is width:600px but not the actual buttons width together which is 507)*/
+  animation: play 0.7s steps(2)/*I have to keyframes*/ infinite;
+  }
+
+  @keyframes play {
+    0%{background-position: 0px;}/*I want it to start at 0px*/
+    100%{background-position: -600px;} /*width of spitesheet*/
+  }
+
+#portfolio_button_active {
+  position: absolute;
+  height: 46px;
+  width: 207px;
+}
+
+#about_me_button {
+  position: absolute;
+  background-image: url("../img/about_me_button.png");
+  top: 70px;
+  height: 47px;
+  width: 208px;
+}
+
+#about_me_button:hover {
+  position: absolute;
+  top: 70px;
+  background: url("../img/about_me_hover_animation.png") 0 0 /*x and y no repeat I think*/ no-repeat;
+  height: 47px;
+  width:254px;/*half the width of button image start/ending point so you only see one keyframe at a time(the spritesheet is width:600px but not the actual buttons width together which is 508)*/
+  animation: play 0.7s steps(2) infinite;
+}
+
+#about_me_button_active {
+  position: absolute;
+  top: 70px;
+  height: 47px;
+  width: 208px;
+}
+
+#contact_button {
+  position: absolute;
+  background-image: url("../img/contact_button.png");
+  bottom: 0px;
+  height: 45px;
+  width: 208px;
+}
+
+#contact_button:hover {
+  position: absolute;
+  bottom: 0px;
+  background: url("../img/contact_hover_animation.png") 0 0/*X & Y*/ no-repeat;
+  height: 45px;
+  width: 254px;/*half the width of button image start/ending point so you only see one keyframe at a time(the spritesheet is width:600px but not the actual buttons width together which is 508)*/
+  animation: play 0.7s steps(2) infinite;
+}
+
+#contact_active {
+  position: absolute;
+  bottom: 0px;
+  height: 45px;
+  width: 208px;
+}
+
+#footer {
+  background-color: #F9BEB7;
+  position: fixed; /*Keeps footer at bottom when scrolling*/
+  bottom: 0px; /*Keeps footer at bottom*/
+  right: 0px;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  height: 90px;
+}
+
+.slideshow_box {
+  position: relative;
+  background-color: white;
+  width: 650px;
+  height: 420px;
+  bottom: 189px;
+  left: 475px;
+  box-shadow: 7px 6px rgba(0, 0, 0, 0.2);/*rgba values is red, green, blue, alpha. The alpha lets you change opcaity of the object*/
+  overflow: hidden;
+}
+
+#slideshow {
+  position: absolute;
+  background: url(../img/slideshow.png)0 0/*X & Y*/ no-repeat;
+  height:400px;
+  width: 650px;
+  animation: play 10s steps(84) infinite;
+  }
+
+
+#slideshow_hover_link {
+  position: absolute;
+  width: 650px;
+  height: 400px;
+  z-index: 3;
+}
+
+#slideshow_hover_link:hover {
+  background-color: white;
+  opacity: 0.6;
+}
+
+#slideshow_banner {
+  position: relative;
+  background-image: url("../img/slideshow_banner.png");
+  height: 34px;
+  width: 162.522px;
+  left: 20px;
+  top: 15px;
+  z-index: 2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  bottom: 189px;
+  left: 293px;
+  overflow: hidden;
+  border: 5px;
+}
+
+h1,h2,h3,h4,h5 {
+  font-size: 20px;
+  word-break: break-all;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 0px; /*removes space between h1 and other elements*/
+  margin-top: 0px;
+}
+
+h6 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  margin-bottom: 0px; /*removes space between h1 and other elements*/
+  margin-top: 0px;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    margin-top: 0px;/*removes space between p and other elements*/
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+.row
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+#portfolio_header {
+  padding: 0px 10px;
+  position: relative;
+  background-color: white;
+  height: 66px;
+  width: 237px;
+  box-shadow: 7px 6px rgba(0, 0, 0, 0.2);/*rgba values is red, green, blue, alpha. The alpha lets you change opcaity of the object*/
+  bottom: 185px;
+  left: 475px;
+}
+
+#about_header {
+  padding: 0px 10px;
+  position: relative;
+  background-color: white;
+  height: 45px;
+  width: 161px;
+  box-shadow: 7px 6px rgba(0, 0, 0, 0.2);/*rgba values is red, green, blue, alpha. The alpha lets you change opcaity of the object*/
+  bottom: 185px;
+  left: 475px;
+}
+
+#about_main {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  width: 650px;
+  height: 1035px;
+  bottom: 175px;
+  left: 475px;
+  box-shadow: 7px 6px rgba(0, 0, 0, 0.2);/*rgba values is red, green, blue, alpha. The alpha lets you change opcaity of the object*/
+}
+
+#quote {
+  font-weight: bold;
+}
+
+.column_about {
+  float: right;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.amanda_title {
+  color: #ff6666;
+}
+
+.about_contact_button {
+  padding: 8px;
+  color: white;
+  background-color: #72A587;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+}
+
+.about_contact_button:hover {
+  background-color: #597A65;
+}
+
+#main_contact {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  width: 650px;
+  height: 280px;
+  bottom: 175px;
+  left: 475px;
+  box-shadow: 7px 6px rgba(0, 0, 0, 0.2);/*rgba values is red, green, blue, alpha. The alpha lets you change opcaity of the object*/
+}
+
+#contact_header {
+  padding: 0px 10px;
+  position: relative;
+  background-color: white;
+  height: 45px;
+  width: 132px;
+  box-shadow: 7px 6px rgba(0, 0, 0, 0.2);/*rgba values is red, green, blue, alpha. The alpha lets you change opcaity of the object*/
+  bottom: 185px;
+  left: 475px;
+}
+
+.portait {
+  float: right;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+#footer_container {
+  position: relative;
+  width: 300px;
+  height: 40px;
+  left: 50px;
+}
+
+#instagram {
+  position: absolute;
+  background-image: url("../img/instagram.png");
+  height: 34px;
+  width: 34px;
+  left: 120px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#pinterest {
+  position: absolute;
+  background-image: url("../img/pinterest.png");
+  height: 34px;
+  width: 34px;
+  left: 40px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#tumblr {
+  position: absolute;
+  background-image: url("../img/tumblr.png");
+  height: 34px;
+  width: 34px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#facebook {
+  position: absolute;
+  background-image: url("../img/facebook.png");
+  height: 34px;
+  width: 34px;
+  left: 80px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#instagram:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#pinterest:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#tumblr:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#facebook:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#instagram_about {
+  position: absolute;
+  background-image: url("../img/instagram.png");
+  height: 34px;
+  width: 34px;
+  left: 600px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#pinterest_about {
+  position: absolute;
+  background-image: url("../img/pinterest.png");
+  height: 34px;
+  width: 34px;
+  left: 490px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#tumblr_about {
+  position: absolute;
+  background-image: url("../img/tumblr.png");
+  height: 34px;
+  width: 34px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#facebook_about {
+  position: absolute;
+  background-image: url("../img/facebook.png");
+  height: 34px;
+  width: 34px;
+  left: 545px;
+  background-repeat: no-repeat; /*so the button isn't viewed more than once*/
+}
+
+#instagram_about:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#pinterest_about:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#tumblr_about:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
+
+#facebook_about:hover {
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  opacity: 0.6;
+}
